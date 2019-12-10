@@ -8,6 +8,7 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 $id= $_POST["id"];
 
+//since we are concanating query Spacing is important
 $query = "UPDATE users SET";
 $query .= " username = '$username', password ='$password'";
 $query .= "where id ='$id'";
@@ -15,7 +16,7 @@ $query .= "where id ='$id'";
 
 $status = mysqli_query($connection,$query);
 
-if(!$status){die("error".mysqli_error());}
+if(!$status){die("error".mysqli_error($connection));}
 
 
 
